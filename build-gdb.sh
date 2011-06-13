@@ -18,7 +18,6 @@
 if [ ! -e gdb-7.2.tar.bz2 ]; then
     wget http://ftp.gnu.org/gnu/gdb/gdb-7.2.tar.bz2
 fi
-exit 1
 bunzip2 -c gdb-7.2.tar.bz2 | tar xf -
 mv gdb-7.2 gdb-7.2-ms1
 
@@ -1259,4 +1258,4 @@ make > build.log 2>&1
 sudo make install
 cp ../../dis68.c .
 gcc -g -Wall -Wextra -Wundef -pedantic-errors -std=c99 -Wstrict-prototypes -Wno-missing-field-initializers -I../include -Ibfd -o dis68 dis68.c opcodes/libopcodes.a bfd/libbfd.a libiberty/libiberty.a -lz
-cp dis68 /usr/local/bin/
+sudo cp dis68 /usr/local/bin/
