@@ -1,0 +1,5 @@
+A patch & build script for GDB-7.2. Builds a GDB for a bare-metal 68000 target, using Motorola
+syntax for the disassembly. There's also a little utility "dis68" which is a 68000 disassembler
+which accepts raw binary files (e.g MegaDrive .bin files). It also has some test code to verify the
+syntax switch hasn't broken anything. When I get time I will split these two functions out, and add
+more test cases.
