@@ -21,14 +21,6 @@ fi
 bunzip2 -c gdb-7.2.tar.bz2 | tar xf -
 mv gdb-7.2 gdb-7.2-ms1
 
-patch gdb-7.2-ms1/configure <<EOF
---- gdb-7.2-old/configure	2010-06-01 18:28:08.000000000 +0100
-+++ gdb-7.2-new/configure	2011-06-09 11:50:35.349109002 +0100
-@@ -4669 +4669 @@
--    CFLAGS="-g -O2"
-+    CFLAGS="-g"
-EOF
-
 patch gdb-7.2-ms1/gdb/m68k-tdep.c <<EOF
 --- gdb-7.2-old/gdb/m68k-tdep.c	2010-01-01 07:31:37.000000000 +0000
 +++ gdb-7.2-new/gdb/m68k-tdep.c	2011-06-12 19:23:10.917109001 +0100
