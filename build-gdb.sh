@@ -18,8 +18,17 @@
 if [ ! -e gdb-7.2.tar.bz2 ]; then
     wget http://ftp.gnu.org/gnu/gdb/gdb-7.2.tar.bz2
 fi
+rm -rf gdb-7.2 gdb-7.2-ms1
 bunzip2 -c gdb-7.2.tar.bz2 | tar xf -
 mv gdb-7.2 gdb-7.2-ms1
+
+patch gdb-7.2-ms1/gdb/remote.c <<EOF
+--- remote.c.old	2011-06-26 20:06:36.704386001 +0100
++++ remote.c.new	2011-06-26 20:29:14.872386002 +0100
+@@ -6840 +6840 @@
+-	      if (tcount > 3)
++	      //if (tcount > 3)
+EOF
 
 patch gdb-7.2-ms1/gdb/m68k-tdep.c <<EOF
 --- gdb-7.2-old/gdb/m68k-tdep.c	2010-01-01 07:31:37.000000000 +0000
